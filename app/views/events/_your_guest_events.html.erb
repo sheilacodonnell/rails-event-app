@@ -1,0 +1,5 @@
+<h2>Attending Events</h2>
+<p><%= Guest.where(user_id: current_user.id).map{|e| e.event.title }  %></p>
+
+<h2>Hosting Events</h2>
+<p><%= Event.where(host_id: current_user.id).map{|e| e.title }  %></p>

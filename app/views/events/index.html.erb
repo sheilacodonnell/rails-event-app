@@ -3,6 +3,12 @@
 
 
 <p><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
+
+
+
+<%= render 'your_guest_events' %>
+
+
 <p><%= @user.first_name %></p>
 <%= link_to "Create New Event", new_event_path %>
 

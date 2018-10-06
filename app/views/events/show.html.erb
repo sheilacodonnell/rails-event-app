@@ -3,6 +3,12 @@
 <p><%= @event.scheduled_for %></p>
 <p><%= @event.location %></p>
 <p><%= @event.description %></p>
+<p><%= @event.guests.map {|e| e.user.first_name}.to_sentence %></p>
+
+<% if @event.guests.select{|e| e.user_id}.include?(current_user.id) %>
+<p>You are registered!</p>
+<% else %>
 
 <%= link_to "Register", new_event_guest_path(@event.id) %>
+<% end %>
 
