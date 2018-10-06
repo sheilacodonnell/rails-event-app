@@ -1,0 +1,13 @@
+
+      <%= bootstrap_form_for @event do |f| %>
+
+
+<%= f.text_field :title, class: "form-control", placeholder: 'Event name' %>
+<%= f.datetime_field :scheduled_for, class: "form-control", placeholder: 'Date and time' %>
+<%= f.text_field :location, class: "form-control", placeholder: 'Location' %>
+<%= f.text_area :description, class: "form-control", placeholder: 'Description' %>
+
+<%= f.submit "Create", class: 'form-control btn-primary' %>
+
+
+<% end %>

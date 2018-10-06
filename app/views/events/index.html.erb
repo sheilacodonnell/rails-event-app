@@ -1,0 +1,24 @@
+<div class="container">
+<% if user_signed_in? %>
+
+
+<p><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
+<p><%= @user.first_name %></p>
+<%= link_to "Create New Event", new_event_path %>
+
+
+    <h1>Events</h1>
+
+    <% @events.each do |event| %>
+
+    <p><%= link_to event.title, event_path(event) %></p>
+    <p><%= event.scheduled_for %></p>
+    <p><%= event.description %></p>
+    <p><%= event.location %></p>
+
+    <% end %>
+    <% else %>
+      <li ><%= link_to 'Login', new_user_session_path %></li>
+      <li ><%= link_to 'Signup', new_user_registration_path %></li>
+    <% end %>
+</div>
