@@ -1,0 +1,13 @@
+<h1>Register for <%= @event.title %></h1>
+
+<%= form_for @guest, url: {action: "create"} do |f| %>
+  
+    <%= f.fields_for :user, current_user do |builder| %>
+        <fieldset>
+          <%= builder.label :first_name, "First Name" %><br />
+          <%= builder.text_field :first_name %><br />
+        </fieldset>
+      <% end %>
+    
+      <%= f.submit "Register" %>
+    <% end %>

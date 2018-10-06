@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :guests
   has_many :events, :through => :guests
 
+  accepts_nested_attributes_for :guests
+
+
 end
